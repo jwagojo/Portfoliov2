@@ -1,0 +1,76 @@
+<title>RJ Portacion</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Fredoka:wght@500;600&display=swap">
+<style>
+/* Shell: three full-screen scenes (title at UMass Lowell, the Taguig barangay, the court), one visible at a time. */
+:root { --bg: #120e26; --ink: #f4ece0; --yellow: #f6c343; --red: #d6332a; color-scheme: dark; }
+html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); color: var(--ink); }
+.scene { position: fixed; inset: 0; width: 100%; height: 100%; border: 0; display: block; background: var(--bg); }
+.scene[hidden] { display: none !important; }
+.fade {
+  position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; pointer-events: none;
+  background: radial-gradient(circle at 50% 45%, #2a1f4a 0%, #0c0a18 75%); opacity: 0; transition: opacity .45s ease;
+}
+.fade.on { opacity: 1; pointer-events: auto; }
+.fade p { margin: 0; text-align: center; font: 400 clamp(20px, 5vw, 36px)/1.1 "Bungee", "Arial Black", Impact, sans-serif; color: var(--yellow); text-shadow: 3px 3px 0 var(--red); padding: 0 24px; }
+.fade small { display: block; margin-top: 10px; font: 600 14px "Fredoka", system-ui, sans-serif; color: #b9afcf; text-shadow: none; }
+@media (prefers-reduced-motion: reduce) { .fade { transition: none; } }
+</style>
+
+<iframe class="scene" id="s-title" title="Title screen: UMass Lowell North Campus" allow="autoplay"></iframe>
+<iframe class="scene" id="s-hub" title="The barangay: R.J.'s portfolio street in Taguig" allow="autoplay" hidden></iframe>
+<iframe class="scene" id="s-court" title="The barangay basketball court" allow="autoplay" hidden></iframe>
+<div class="fade" id="fade" aria-live="polite"><p id="fade-text"></p></div>
+
+<script>
+  // Each scene is its own page. They ask the shell to move on with postMessage({ go: 'hub' | 'court' | 'title', from });
+  // the shell fades, swaps which frame is visible, and tells the scenes to pause or resume.
+  const SRC = { title: 'title.html', hub: 'hub.html', court: 'court.html' };
+  const LINES = {
+    hub: ['NEXT STOP:<br>TAGUIG CITY', 'Welcome to the barangay'],
+    court: ['DOWN THE ESKINITA', 'To the court'],
+    back: ['BACK TO THE STREET', ''],
+    title: ['UMASS LOWELL', 'North Campus'],
+  };
+  const frames = { title: document.getElementById('s-title'), hub: document.getElementById('s-hub'), court: document.getElementById('s-court') };
+  const fade = document.getElementById('fade'), fadeText = document.getElementById('fade-text');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let current = null, busy = false;
+
+  const post = (name, msg) => { try { frames[name].contentWindow.postMessage(msg, '*'); } catch (e) {} };
+  function load(name) { return new Promise((res) => { const f = frames[name]; if (f.dataset.loaded) return res(); f.addEventListener('load', () => { f.dataset.loaded = '1'; res(); }, { once: true }); f.src = SRC[name]; }); }
+  const wait = (ms) => new Promise((r) => setTimeout(r, reduce ? 0 : ms));
+
+  async function show(name, from, instant) {
+    if (busy || name === current) return; busy = true;
+    const key = name === 'hub' && from === 'court' ? 'back' : name;
+    const [big, small] = LINES[key] || ['', ''];
+    fadeText.innerHTML = big + (small ? `<small>${small}</small>` : '');
+    if (!instant) { fade.classList.add('on'); await wait(500); }
+    const fresh = !frames[name].dataset.loaded;
+    // a scene has to be laid out (visible, under the fade) while it loads, or it measures a 0x0 screen
+    frames[name].style.zIndex = '1'; frames[name].hidden = false;
+    await load(name);
+    if (current) { post(current, { cmd: 'pause' }); frames[current].hidden = true; }
+    frames[name].style.zIndex = ''; current = name;
+    if (!fresh) post(name, { cmd: 'resume', from });
+    try { frames[name].contentWindow.focus(); } catch (e) {}
+    try { history.replaceState(null, '', '#' + name); } catch (e) {}
+    if (!instant) { await wait(fresh ? 450 : 250); fade.classList.remove('on'); }
+    busy = false;
+  }
+
+  window.addEventListener('message', (e) => {
+    const m = e.data || {};
+    if (!m.go || !SRC[m.go]) return;
+    const src = Object.keys(frames).find((k) => frames[k].contentWindow === e.source);
+    if (!src) return;
+    show(m.go, m.from || src);
+  });
+
+  // deep links: #hub or #court open straight into that scene
+  const start = (location.hash || '').slice(1);
+  show(SRC[start] ? start : 'title', null, true);
+</script>

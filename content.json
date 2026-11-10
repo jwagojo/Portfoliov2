@@ -1,0 +1,93 @@
+{
+  "_readme": "Everything on the site that you'd want to update lives here. Edit, commit, and the site redeploys. Keep the quotes and commas: paste this file into jsonlint.com if the site stops showing your changes.",
+
+  "name": "R.J. PORTACION",
+  "tagline": "Wears many hats. Most of them are cleanroom hoods.",
+  "subline": "Computer Engineering @ UMass Lowell · Semiconductor process & packaging",
+
+  "education": {
+    "school": "University of Massachusetts Lowell",
+    "degree": "B.S. Computer Engineering · Shah Academy Scholar · Founder & President, IGNITE",
+    "when": "Sep 2024 – May 2028",
+    "extra": "GPA 3.4"
+  },
+
+  "experience": [
+    {
+      "title": "Incoming Nanofabrication Engineer",
+      "org": "Core Research Facilities (Internship)",
+      "where": "Lowell, MA",
+      "when": "Jan 2027 – May 2027",
+      "bullets": []
+    },
+    {
+      "title": "Process Engineer",
+      "org": "Applied Materials (Co-op)",
+      "where": "Billerica, MA",
+      "when": "Jul 2026 – Dec 2026",
+      "bullets": [
+        "Optimized bottom-up Cu electroplating of 20 × 200 µm high-aspect-ratio features through DOE-driven variation of bath chemistry, temperature, dwell time, vacuum prewet and current-density waveforms, cutting customer wafer fill time 50%, from a 10-hour benchmark to 5 hours.",
+        "Developed wafer-level ECD and metallization processes for Cu, In and Pd across TSV, TGV, damascene and advanced-packaging structures to improve throughput and efficiency.",
+        "Performed process and hardware qualification using optical profilometry, AOI, X-ray imaging, cross-sectional and defect analysis, using JMP and Excel to analyze Cu thickness, roughness, uniformity, terminal effects, feature fill and overburden.",
+        "Operated and troubleshot automated ECD and wet-process equipment (process cells, chemical reservoirs, vacuum, fluid delivery, wafer handling, CDA/N₂ utilities), diagnosing faults through systematic root-cause analysis."
+      ]
+    },
+    {
+      "title": "Research Associate, Ultra-wide Bandgap Semiconductors",
+      "org": "Bhuiyan Research Group · PI: Dr. Anhar Bhuiyan",
+      "where": "Lowell, MA",
+      "when": "Sep 2025 – Jul 2026",
+      "bullets": [
+        "Supported LPCVD growth of Ga₂O₃ thin films: substrate preparation, wafer cleaving, precursor handling, reactor setup, gas-flow calibration and process monitoring for reproducible deposition.",
+        "Characterized films with XRD, SEM, AFM and Hall Effect measurements, correlating crystal structure, morphology and electrical properties with growth parameters.",
+        "Presented findings at a university research symposium and the 3-Minute Thesis competition."
+      ]
+    },
+    {
+      "title": "Research Associate, Photonics",
+      "org": "Wang Laboratory of Optics · PI: Dr. Xingwei Wang",
+      "where": "Lowell, MA",
+      "when": "Feb 2025 – Aug 2025",
+      "bullets": [
+        "Fabricated fiber-optic biosensors and strain sensors through fiber splicing, stripping, shaping and chemical etching (glass etchant, BOE, HCl-based solutions).",
+        "Developed and tested a fiber-optic glucose biosensor using optical frequency domain reflectometry (OFDR) to characterize spectral response, wavelength shifts and signal stability."
+      ]
+    }
+  ],
+
+  "skills": [
+    { "group": "Semiconductor processing", "items": "Electroplating (ECD), LPCVD, advanced packaging, wet processing, cleanroom" },
+    { "group": "Metrology & analysis", "items": "SEM, XRD, profilometry, AOI, AFM, X-ray imaging, defect analysis, Hall Effect" },
+    { "group": "Electronics & hardware", "items": "PCB design, oscilloscopes, equipment troubleshooting, multimeters, soldering" },
+    { "group": "Software & data", "items": "JMP, Excel, C, C++, ARM Assembly, LTspice, Multisim, Quartus, MATLAB, Arduino IDE" }
+  ],
+
+  "projects": [
+    {
+      "title": "ARM Assembly Blackjack System",
+      "tags": ["ARM Assembly", "I²C", "GPIO", "Embedded systems"],
+      "text": "An ARM-based embedded blackjack game with real-time game logic, memory management and modular subroutines. It drives a 20×4 I²C LCD and GPIO controls, with 3.3 V / 5 V level-shifting circuitry and hands-on hardware and software debugging."
+    },
+    {
+      "title": "Colpitts Oscillator",
+      "tags": ["LTspice", "Analog circuit design", "FFT analysis"],
+      "text": "An LM741-based oscillator using LC resonance and diode feedback stabilization. Component values were iterated to reach a 7 kHz sinusoidal output, then frequency response, waveform stability and harmonic performance were validated."
+    }
+  ],
+
+  "about": {
+    "lede": "I'm R.J., a Computer Engineering student at UMass Lowell who wears a lot of hats. Most of them end up being cleanroom hoods.",
+    "hats": ["Computer engineer", "Process engineer", "Researcher", "Founder & President, IGNITE", "Shah Academy Scholar"],
+    "paragraphs": [
+      "My specialty is semiconductors. At Applied Materials I developed copper electroplating for high-aspect-ratio features and cut a customer's wafer fill time in half. Before that I grew Ga₂O₃ thin films by LPCVD in the Bhuiyan Research Group and built fiber-optic sensors in the Wang Laboratory of Optics. Next I'm joining UMass Lowell's Core Research Facilities as a nanofabrication engineering intern.",
+      "Outside the lab I founded and lead IGNITE, and I'm a Shah Academy Scholar. This site is the rest of me: a barangay street, a basketball court, and a brown Mazda6 with a CHOIKI plate."
+    ]
+  },
+
+  "contact": {
+    "lede": "Open to semiconductor process, packaging and nanofabrication roles.",
+    "email": "rojannportacion@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/rjportacion",
+    "location": "Based in Massachusetts."
+  }
+}
