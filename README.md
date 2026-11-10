@@ -10,8 +10,10 @@ A side-scrolling portfolio. You ride a jeepney from UMass Lowell into a Taguig b
 |---|---|
 | Name, tagline or subline on the title screen | `name`, `tagline`, `subline` |
 | School, degree, dates, GPA | `education` |
-| A job or research position | an item in `experience` (put the newest first) |
+| A job or research position | an item in `experience` (industry & research) or `work` (professional), newest first |
 | Skills | `skills`, one row per group |
+| Certifications, honors & awards | `certifications`, `awards` |
+| Leadership (the SK Youth Center door) | `leadership`, plus one-liners in `leadershipOther` |
 | Projects | `projects`. Add `"link": "https://…"` to show a "See it" button |
 | About text and the "hats" chips | `about` |
 | Email, LinkedIn, location line | `contact` |
@@ -24,12 +26,13 @@ To add a job, copy an existing `{ … }` block in `experience`, paste it where y
 
 | File | What it is |
 |---|---|
-| `index.html` | The shell. It holds the three scenes and fades between them |
+| `index.html` | The shell. It holds the three scenes and plays the transitions between them (jeepney ride, "Heads up!") |
 | `title.html` | Title screen: UMass Lowell, the grenade, the jeepney ride |
 | `hub.html` | The barangay street: storefronts, the family, the volleyball corner |
 | `court.html` | The basketball court |
 | `content.json` | Your resume, projects, about and contact text |
 | `content.js` | Reads `content.json` and fills in the panels |
+| `RJ_Portacion_Resume.pdf` | The resume behind the Download button. Replace this file (same name) to update it |
 
 Deep links work: `/#hub` opens the street, and `/#court` opens the court.
 
