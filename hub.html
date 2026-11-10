@@ -248,7 +248,7 @@ canvas#scene { position: fixed; inset: 0; width: 100%; height: 100%; display: bl
 @media (prefers-reduced-motion: reduce) { #act.ready { animation: none; } .pc { animation: none; } }
 </style>
 
-<canvas id="scene" aria-label="A dense street in Taguig City. Wesley can walk to a print shop, an electronics repair stall, the alley gate to the basketball court, the barangay hall, a sari-sari store, the SK youth center, and a volleyball corner at the end of the street where Han and the kids hang out."></canvas>
+<canvas id="scene" aria-label="A dense street in Calamba City. Wesley can walk to a print shop, an electronics repair stall, the alley gate to the basketball court, the barangay hall, a sari-sari store, the SK youth center, and a volleyball corner at the end of the street where Han and the kids hang out."></canvas>
 
 <button class="mini" id="skip" hidden>Skip intro ➜</button>
 <button class="mini" id="sections" aria-haspopup="true" aria-expanded="false">☰ Sections</button>
@@ -716,7 +716,7 @@ canvas#scene { position: fixed; inset: 0; width: 100%; height: 100%; display: bl
   ];
   const REACH = 58;
 
-  // ---------- a dense Taguig street: sky only in the gaps ----------
+  // ---------- a dense Calamba street: sky only in the gaps ----------
   const FH = 112;                       // one storey ≈ 9.3 ft
   function drawSky() {
     const v = V(), x0 = v.x - 10, x1 = v.x + v.w + 10;
@@ -979,7 +979,7 @@ canvas#scene { position: fixed; inset: 0; width: 100%; height: 100%; display: bl
       ctx.save(); ctx.beginPath(); ctx.rect(x + 8, G - FH + 8, w - 16, FH - 8); ctx.clip();
       const g = ctx.createLinearGradient(x, 0, x + w, 0); g.addColorStop(0, '#0038a8'); g.addColorStop(0.5, '#f6c343'); g.addColorStop(1, '#ce1126'); ctx.fillStyle = g; ctx.globalAlpha = 0.75; ctx.fillRect(x, G - FH, w, FH); ctx.globalAlpha = 1;
       ctx.translate(x + w / 2, G - 60); drawSunShape(34, '#fcd116'); ctx.restore();
-      ctx.fillStyle = '#fff'; ctx.font = `12px ${DISPLAY}`; ctx.textAlign = 'center'; ctx.fillText('TAGUIG', x + w / 2, G - 18);
+      ctx.fillStyle = '#fff'; ctx.font = `12px ${DISPLAY}`; ctx.textAlign = 'center'; ctx.fillText('CALAMBA', x + w / 2, G - 18);
     },
   };
   function drawSkyStrip(x, w) {
@@ -1882,7 +1882,7 @@ canvas#scene { position: fixed; inset: 0; width: 100%; height: 100%; display: bl
     ctx.strokeStyle = 'rgba(40,44,54,.5)'; ctx.lineWidth = 1; for (let y = sT + 4; y < G; y += 4) { ctx.beginPath(); ctx.moveTo(sx, y); ctx.lineTo(sx + sw, y); ctx.stroke(); }
     ctx.fillStyle = 'rgba(70,60,52,.22)'; for (let k = 0; k < 9; k++) { ctx.beginPath(); ctx.arc(WALLX + (hash(k + 40) - 0.5) * 18, G - 26 - hash(k + 60) * 90, 4 + hash(k) * 2, 0, 7); ctx.fill(); }   // ball scuffs
     ctx.save(); ctx.translate(sx + sw / 2 + 4, sT + 34); ctx.rotate(-0.06); ctx.fillStyle = '#d6332a'; ctx.font = `15px "Permanent Marker", ${DISPLAY}`; ctx.textAlign = 'center'; ctx.fillText('BAWAL MAG-BOLA', 0, 0, 136); ctx.font = `11px "Permanent Marker", ${DISPLAY}`; ctx.fillText('DITO!!', 26, 14); ctx.restore();
-    ctx.fillStyle = '#2f6fd6'; ctx.font = `10px "Permanent Marker", ${DISPLAY}`; ctx.textAlign = 'left'; ctx.fillText('TAGUIG', sx + 8, G - 10);
+    ctx.fillStyle = '#2f6fd6'; ctx.font = `10px "Permanent Marker", ${DISPLAY}`; ctx.textAlign = 'left'; ctx.fillText('CALAMBA', sx + 8, G - 10);
     ctx.strokeStyle = '#3fb26a'; ctx.lineWidth = 1.6; ctx.beginPath(); ctx.arc(sx + sw - 22, G - 22, 7, 0, 7); ctx.stroke(); ctx.beginPath(); ctx.arc(sx + sw - 22, G - 21, 4, 0.2, Math.PI - 0.2); ctx.stroke();
     rr(sx + 24, sT + 46, 34, 14, 1, '#d9c08a', 1); ctx.fillStyle = '#16121c'; ctx.font = `7px ${DISPLAY}`; ctx.textAlign = 'center'; ctx.fillText('SARADO', sx + 41, sT + 56, 30);
     rr(sx + sw / 2 - 3, G - 7, 6, 6, 1, '#c9a227', 0.8);
@@ -3496,7 +3496,7 @@ canvas#scene { position: fixed; inset: 0; width: 100%; height: 100%; display: bl
     soft18S: ['Soft 18. Stand. Don’t get cute.', 'Soft 18 vs a {d}. Stand. A rare W for you.', 'Stand on that soft 18. Quit while you’re… ahead-ish.'],
     softD: ['Soft {t} vs {d}. Book says double. Yes, with an ace. Trust the math, engineer.', 'Soft {t} against my {d}? Double it. Can’t believe I’m helping you.', 'Double that soft {t}. The book says so, not me. I want your fishballs.'],
     softH: ['Soft {t}. Hit. The ace has your back. Can’t bust, even you.', 'Soft {t}? Hit it, scaredy-cat. You can’t bust.', 'Soft {t}. Free hit. Literally zero risk. Go.'],
-    hard17: ['{t}. Stand. Touch it and I’m telling the barangay.', '{t}? Stand. Don’t make me watch.', '{t}. You stand, I sweat. That’s the deal.', 'Stand on {t}. Hitting that is illegal in Taguig.'],
+    hard17: ['{t}. Stand. Touch it and I’m telling the barangay.', '{t}? Stand. Don’t make me watch.', '{t}. You stand, I sweat. That’s the deal.', 'Stand on {t}. Hitting that is illegal in Calamba.'],
     hard16H: ['16 versus a {d}? The book says hit. I know, your hands are shaking.', '16 against my {d}. Worst hand in blackjack. Hit and pray.', 'Sixteen vs a {d}. Hit. Standing is just losing slower.', '16 against a {d}? Hit. Only chickens stand here.'],
     stiffS: ['{t} against my {d}? Stand, genius. Let me bust for you.', '{t} vs {d}. Stand. I’m the one in trouble here. Allegedly.', 'Stand. My {d} is a bust card. You know that… you know that, right?', '{t}? Against a {d}? Sit tight and let the dealer do the dumb stuff.'],
     stiffH: ['{t} vs {d}. Book says hit. Don’t overthink it, it’s not your thesis.', '{t} against my {d}? Hit. Standing there is basically donating.', '{t} vs {d}. Hit. I can smell the fear from here.', 'The book says hit on {t} against a {d}. I’d lie to you, but I’m too honest.'],

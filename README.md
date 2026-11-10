@@ -1,6 +1,6 @@
 # Wesley Agojo: portfolio
 
-A side-scrolling portfolio. You ride a jeepney from UMass Lowell into a Taguig barangay, browse the storefronts for my resume and projects, play pepper with Han, and shoot around on the court.
+A side-scrolling portfolio. You ride a jeepney from UMass Lowell into a Calamba barangay, browse the storefronts for my resume and projects, play pepper with Han, and shoot around on the court.
 
 ## Updating the site
 

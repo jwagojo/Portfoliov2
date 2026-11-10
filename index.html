@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#120e26">
-<meta name="description" content="Wesley Agojo: Computer Science + Mathematics @ UMass Lowell. A side-scrolling portfolio from UMass Lowell to a Taguig barangay.">
+<meta name="description" content="Wesley Agojo: Computer Science + Mathematics @ UMass Lowell. A side-scrolling portfolio from UMass Lowell to a Calamba barangay.">
 <title>Wesley Agojo</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Fredoka:wght@500;600&display=swap">
 <style>
-/* Shell: three full-screen scenes (title at UMass Lowell, the Taguig barangay, the court), one visible at a time.
+/* Shell: three full-screen scenes (title at UMass Lowell, the Calamba barangay, the court), one visible at a time.
    Moving between them plays a short animated transition on #tr while the next scene loads underneath. */
 :root { --bg: #120e26; --ink: #f4ece0; --yellow: #f6c343; --red: #d6332a; color-scheme: dark; }
 html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); color: var(--ink); }
@@ -31,7 +31,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
 </style>
 
 <iframe class="scene" id="s-title" title="Title screen: UMass Lowell North Campus" allow="autoplay"></iframe>
-<iframe class="scene" id="s-hub" title="The barangay: Wesley's portfolio street in Taguig" allow="autoplay" hidden></iframe>
+<iframe class="scene" id="s-hub" title="The barangay: Wesley's portfolio street in Calamba" allow="autoplay" hidden></iframe>
 <iframe class="scene" id="s-court" title="The barangay basketball court" allow="autoplay" hidden></iframe>
 <div class="fade" id="fade"><p id="fade-text"></p></div>
 <canvas id="tr" aria-hidden="true"></canvas>
@@ -42,7 +42,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
   // the shell plays a transition, swaps which frame is visible, and tells the scenes to pause or resume.
   const SRC = { title: 'title.html', hub: 'hub.html', court: 'court.html' };
   const LINES = {
-    hub: ['NEXT STOP:<br>TAGUIG CITY', 'Welcome to the barangay'],
+    hub: ['NEXT STOP:<br>CALAMBA CITY', 'Welcome to the barangay'],
     court: ['DOWN THE ESKINITA', 'To the court'],
     back: ['BACK TO THE STREET', ''],
     title: ['UMASS LOWELL', 'North Campus'],
@@ -549,7 +549,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
     c.restore();
   }
 
-  // ---------- 1. the jeepney ride into Taguig ----------
+  // ---------- 1. the jeepney ride into Calamba ----------
   function drawJeep(x, y, L, wheelA, pitch, dust) {
     const s = L / 100; c.save(); c.translate(x + 34 * s, y); c.rotate(pitch); c.translate(-34 * s, 0); c.scale(s, s); c.lineJoin = 'round';
     const lw = 2.2 / s * 1.2;
@@ -557,7 +557,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
     c.fillStyle = 'rgba(0,0,0,.28)'; c.beginPath(); c.ellipse(0, 1, 56, 3.2, 0, 0, 7); c.fill();
     // roof with the route board
     rr(-54, -48, 86, 6, 2, '#d9dee6', lw); rr(-34, -57, 50, 10, 2, '#f6c343', lw);
-    c.fillStyle = '#d6332a'; c.font = `7px ${DISP}`; c.textAlign = 'center'; c.fillText('TAGUIG', -9, -49.4, 46);
+    c.fillStyle = '#d6332a'; c.font = `7px ${DISP}`; c.textAlign = 'center'; c.fillText('CALAMBA', -9, -49.4, 46);
     // the body: chrome, painted stripes
     c.beginPath(); c.moveTo(-52, -42); c.lineTo(28, -42); c.lineTo(32, -26); c.lineTo(50, -24); c.quadraticCurveTo(53, -23, 53, -18); c.lineTo(53, -8); c.lineTo(-54, -8); c.lineTo(-54, -40); c.closePath();
     const bg = c.createLinearGradient(0, -42, 0, -8); bg.addColorStop(0, '#f2f4f7'); bg.addColorStop(0.5, '#c9ced6'); bg.addColorStop(1, '#9aa2ad'); c.fillStyle = bg; c.fill(); c.lineWidth = lw; c.strokeStyle = OL; c.stroke();
@@ -591,7 +591,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
       T.sky = Array.from({ length: 26 }, (_, i) => ({ x: hash(i) * 1, w: 0.03 + hash(i + 9) * 0.05, h: 0.12 + hash(i + 3) * 0.28, ant: hash(i + 7) > 0.7 }));
       T.mid = Array.from({ length: 14 }, (_, i) => ({ w: 0.12 + hash(i * 2.1) * 0.12, h: 0.16 + hash(i * 4.7) * 0.16, col: ['#e2c9a3', '#9cc3b6', '#d79a96', '#b8c7d9', '#e8d07a', '#f0a77e', '#d6c3e6'][i % 7] }));
       engine(2.6); tone(392, 392, 0.12, 'square', 0.035, 0.45); tone(330, 330, 0.18, 'square', 0.035, 0.6);   // beep-beep
-      T.say = 'Next stop: Taguig City.';
+      T.say = 'Next stop: Calamba City.';
     },
     TB: 2.15, BD: 0.62,
     speed(t) { if (t < this.TB) return 1; const e = clamp((t - this.TB) / this.BD, 0, 1); return Math.pow(1 - e, 2.2); },
@@ -639,7 +639,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
         drawJeep(jx, jy + bounce, L, T.pos / (L * 0.08), pitch);
         // tyre smoke while braking
         if (u > 0 && u < this.BD + 0.15 && T.state === 'play') for (const wx of [-34, 34]) for (let k = 0; k < 2; k++) T.smoke.push({ x: jx + wx * L / 100 + (Math.random() - 0.5) * 10, y: jy - 4, vx: -(80 + Math.random() * 200), vy: -(20 + Math.random() * 50), r: 8 + Math.random() * 10, gr: 70 + Math.random() * 90, a: 0.85 });
-        caption('NEXT STOP: TAGUIG CITY', 'Welcome to the barangay', clamp((t - 0.25) / 0.35, 0, 1) * clamp((this.TB + 0.3 - t) / 0.3, 0, 1), H * 0.16);
+        caption('NEXT STOP: CALAMBA CITY', 'Welcome to the barangay', clamp((t - 0.25) / 0.35, 0, 1) * clamp((this.TB + 0.3 - t) / 0.3, 0, 1), H * 0.16);
         c.restore();
       }
       // smoke: rolls out from the tyres, then the cloud swallows the screen
