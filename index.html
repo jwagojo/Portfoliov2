@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#120e26">
-<meta name="description" content="R.J. Portacion: Computer Engineering @ UMass Lowell. A side-scrolling portfolio from UMass Lowell to a Taguig barangay.">
-<title>RJ Portacion</title>
+<meta name="description" content="Wesley Agojo: Computer Science + Mathematics @ UMass Lowell. A side-scrolling portfolio from UMass Lowell to a Taguig barangay.">
+<title>Wesley Agojo</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +31,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
 </style>
 
 <iframe class="scene" id="s-title" title="Title screen: UMass Lowell North Campus" allow="autoplay"></iframe>
-<iframe class="scene" id="s-hub" title="The barangay: R.J.'s portfolio street in Taguig" allow="autoplay" hidden></iframe>
+<iframe class="scene" id="s-hub" title="The barangay: Wesley's portfolio street in Taguig" allow="autoplay" hidden></iframe>
 <iframe class="scene" id="s-court" title="The barangay basketball court" allow="autoplay" hidden></iframe>
 <div class="fade" id="fade"><p id="fade-text"></p></div>
 <canvas id="tr" aria-hidden="true"></canvas>
@@ -113,7 +113,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
   }
 
   // ---------- characters: one rigged chibi model, drawn in code ----------
-  // R.J., Han, Joy, Randy and Justin are "looks" modelled on their reference sheets; every townsperson uses the same rig.
+  // Wesley, Han, Joy, Randy and Justin are "looks" modelled on their reference sheets; every townsperson uses the same rig.
   // A pose is a set of joint angles (0 = hanging straight down, + = swung toward the way they face), so any pose,
   // cycle or prop is under control. draw() returns where the hands ended up, for props held by the caller.
   const RIG = (() => {
@@ -344,7 +344,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
       const s = L.hairStyle, H = L.hair;
       c.lineWidth = OW; c.strokeStyle = OL; c.fillStyle = H;
       const crown = (bottomL = 4, bottomR = -3) => { c.beginPath(); c.moveTo(hx - HR - 0.8, hy + bottomL); c.bezierCurveTo(hx - HR - 2, hy - HRY - 6, hx + HR + 2, hy - HRY - 6, hx + HR + 0.8, hy + bottomR); };
-      if (s === 'mop') {   // R.J.: textured top with curtain bangs from a center part, shorter sides, a mid taper fade around the ear
+      if (s === 'mop') {   // Wesley: textured top with curtain bangs from a center part, shorter sides, a mid taper fade around the ear
         // the taper: hair-coloured shading that fades out from the hairline down past the ear and at the nape
         c.save(); c.beginPath(); c.ellipse(hx, hy, HR, HRY, 0, 0, 7); c.clip();
         const fg = c.createLinearGradient(0, hy - 2, 0, hy + 11); fg.addColorStop(0, 'rgba(43,35,40,.62)'); fg.addColorStop(0.55, 'rgba(43,35,40,.28)'); fg.addColorStop(1, 'rgba(43,35,40,0)');
@@ -493,7 +493,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
     return { draw, head };
   })();
 
-  // R.J., side view: feet at (x, y), h tall. dir 1 faces right. ph drives the walk cycle; still = standing.
+  // Wesley, side view: feet at (x, y), h tall. dir 1 faces right. ph drives the walk cycle; still = standing.
   function drawRJ(x, y, h, dir, ph, opt = {}) {
     {   // the rigged model
       const tt = performance.now() / 1000;
@@ -748,7 +748,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
         caption('BACK TO THE STREET', 'Good run.', clamp((t - 0.1) / 0.3, 0, 1), H * 0.15);
         c.restore();
       }
-      // an iris closes on R.J., then opens on the street
+      // an iris closes on Wesley, then opens on the street
       const irisX = W * 0.45, irisY = H * 0.62, big = Math.hypot(W, H);
       let rad = null;
       if (T.state !== 'reveal' && t > 0.85) rad = big * (1 - easeOut(clamp((t - 0.85) / (this.cover - 0.85), 0, 1)));

@@ -136,7 +136,7 @@ canvas { display: block; width: 100%; height: 100%; touch-action: none; }
     <div class="help-in">
       <button class="mini help-x" id="help-close" aria-label="Close">&times;</button>
       <h2>Barangay Court</h2>
-      <p>You're RJ. Walk into the ball to grab it. Hold the action button and let go in the green. Standing still is a jump shot, moving away from the hoop is a fadeaway, moving toward it is a runner, and running at the rim is a dunk (keep holding to hang on). Tap action without the ball to jump for rebounds.</p>
+      <p>You're Wesley. Walk into the ball to grab it. Hold the action button and let go in the green. Standing still is a jump shot, moving away from the hoop is a fadeaway, moving toward it is a runner, and running at the rim is a dunk (keep holding to hang on). Tap action without the ball to jump for rebounds.</p>
       <p>Talk to Tito Randy for a game of HORSE, or ask Han in the front row to rebound for you. Hit 3, 5 and 10 jumpers in a row and see what happens.</p>
       <p class="keys">Keyboard: arrow keys or A / D to move, E or Space to act.</p>
       <h3>Barangay dictionary</h3>
@@ -417,7 +417,7 @@ canvas { display: block; width: 100%; height: 100%; touch-action: none; }
       const T = alley ? clamp(Math.abs(cp.x - ball.x) / 450 + 0.22, 0.3, 0.6) : 0.62;
       if (alley) c.dunkRise = Math.max(c.dunkRise, T + 0.14);
       throwTo(c, cp.x, cp.y, T);
-      if (alley) talk(kidAnchor, pick(['RJ, lob coming!', 'Go up, RJ!']), 1.2);
+      if (alley) talk(kidAnchor, pick(['Wesley, lob coming!', 'Go up, Wesley!']), 1.2);
     }
     noise(0.3, 900, 0.12);
   }
@@ -629,7 +629,7 @@ canvas { display: block; width: 100%; height: 100%; touch-action: none; }
           if (track === 'fire') pop('HEATING UP', 320, 150, '#ffb347', 16);
           else { pop('SOMETHING IS WATCHING...', 320, 150, '#8fe874', 16); tone(300, 0.6, 'sine', 0.05, 500); }
         }
-        if (streak === 5) pop(track === 'alien' ? 'OUT OF THIS WORLD!' : 'RJ IS ON FIRE!', 320, 150, track === 'alien' ? '#8fe874' : '#ff6a1a', 20);
+        if (streak === 5) pop(track === 'alien' ? 'OUT OF THIS WORLD!' : 'WESLEY IS ON FIRE!', 320, 150, track === 'alien' ? '#8fe874' : '#ff6a1a', 20);
         if (streak === 10) {
           if (tenthEvent === 'ufo') pop('ALIEN SLAM!', 320, 150, '#8fe874', 24);
           else if (tenthEvent === 'meteor' || track !== 'alien') { pop('METEOR!!!', 320, 150, '#ff3b1a', 24); if (tenthEvent !== 'meteor') startMeteor(0.8); }
@@ -682,7 +682,7 @@ canvas { display: block; width: 100%; height: 100%; touch-action: none; }
       h.msg = h.attempt === 'set' ? "Tito Randy's shot. If you get the rebound, pass it to him." : `Tito Randy has to match your ${TYPE_NAME[h.setShot.type].toLowerCase()}. Pass him the ball if you have it.`;
     } else {
       h.phase = 'you';
-      h.msg = h.attempt === 'set' ? 'Your shot, RJ. Make one to set it.' : `Match Tito Randy's ${TYPE_NAME[h.setShot.type].toLowerCase()} from the marker.`;
+      h.msg = h.attempt === 'set' ? 'Your shot, Wesley. Make one to set it.' : `Match Tito Randy's ${TYPE_NAME[h.setShot.type].toLowerCase()} from the marker.`;
     }
   }
 
@@ -695,7 +695,7 @@ canvas { display: block; width: 100%; height: 100%; touch-action: none; }
     if (h.letters[who] >= 5) {
       h.phase = 'over'; h.timer = 8.5; h.winner = other(who);
       startCelebration(h.winner === 'you' ? player : tito);
-      h.msg = h.winner === 'you' ? 'RJ beats Tito Randy at HORSE!' : 'Tito Randy wins. Merienda is on you. Talk to him for a rematch.';
+      h.msg = h.winner === 'you' ? 'Wesley beats Tito Randy at HORSE!' : 'Tito Randy wins. Merienda is on you. Talk to him for a rematch.';
       setTimeout(() => say(h.winner === 'you' ? pick(['Lucky lang! Rematch tomorrow!', 'Hay nako. Fine, merienda is on me.']) : pick(['Practice more, iho!', 'Respect your elders, anak!']), 2.4), 600);
       return true;
     }
@@ -1377,7 +1377,7 @@ canvas { display: block; width: 100%; height: 100%; touch-action: none; }
     reb = { state: 'active', idle: 0, holdT: 0 };
     kidFan.present = false;
     kidC.x = KID_SEAT; kidC.face = 1; endAction(kidC);
-    talk(kidAnchor, pick(['I got your rebounds, RJ!', 'Go shoot, I\'ll pass it back!']), 1.8);
+    talk(kidAnchor, pick(['I got your rebounds, Wesley!', 'Go shoot, I\'ll pass it back!']), 1.8);
   }
   function stopRebounder(text) {
     if (!reb || reb.state === 'leaving') return;
@@ -1394,7 +1394,7 @@ canvas { display: block; width: 100%; height: 100%; touch-action: none; }
       moveChar(k, dt); return;
     }
     reb.idle += dt;
-    if (reb.idle > 10) { stopRebounder(pick(['Okay, I\'m bored. Back to my seat.', 'You\'re not even shooting, RJ!'])); moveChar(k, dt); return; }
+    if (reb.idle > 10) { stopRebounder(pick(['Okay, I\'m bored. Back to my seat.', 'You\'re not even shooting, Wesley!'])); moveChar(k, dt); return; }
     if (ball.owner === k) {
       k.dir = 0; k.face = Math.sign(player.x - k.x) || 1;
       reb.holdT -= dt;
@@ -2192,7 +2192,7 @@ canvas { display: block; width: 100%; height: 100%; touch-action: none; }
         ctx.fillText(ch, 138 + i * 15, y + 1);
       });
     };
-    row('RJ', horse.letters.you, 162);
+    row('WESLEY', horse.letters.you, 162);
     row('TITO', horse.letters.tito, 186);
   }
 
@@ -2357,10 +2357,10 @@ canvas { display: block; width: 100%; height: 100%; touch-action: none; }
   }
 
   // Drawn facing right around the feet; the caller mirrors for facing left.
-  // RJ: grey baggy blazer, white shirt, red tie, loose black slacks, brown dress shoes, curtain-bang hair.
+  // Wesley: grey baggy blazer, white shirt, red tie, loose black slacks, brown dress shoes, curtain-bang hair.
   let headTilt = 0, earbuds = false;
   function drawRJNew(c, L, u, air, sw) {
-    // R.J., built on the same proportions as everyone else on the street (hip at 30, shoulders at 58):
+    // Wesley, built on the same proportions as everyone else on the street (hip at 30, shoulders at 58):
     // washed-black zip hoodie over a dark tee, silver chains, light-wash barrel jeans, chunky black sneakers,
     // short straight hair with a middle part
     const H = L.top, HD = shade(L.top, 0.7), HL = shade(L.top, 1.35), J = L.pants, JD = shade(L.pants, 0.72), JL = '#b9cde4', skinD = shade(L.skin, 0.84);
@@ -2423,7 +2423,7 @@ canvas { display: block; width: 100%; height: 100%; touch-action: none; }
     ctx.restore();
   }
 
-  // the street-proportioned R.J., scaled into this scene's character frame (shoulders land where the arms expect them)
+  // the street-proportioned Wesley, scaled into this scene's character frame (shoulders land where the arms expect them)
   function drawRJ(c, L, u, air, sw) { const K = 0.79; ctx.save(); ctx.scale(K, K); drawRJNew(c, L, (u || 0) / K, air, sw || 0); ctx.restore(); }
 
   function drawSprite(c, L, X, b, cr, air, sw) {
@@ -2512,7 +2512,7 @@ canvas { display: block; width: 100%; height: 100%; touch-action: none; }
   }
 
   // ---------- characters: one rigged chibi model, drawn in code ----------
-  // R.J., Han, Joy, Randy and Justin are "looks" modelled on their reference sheets; every townsperson uses the same rig.
+  // Wesley, Han, Joy, Randy and Justin are "looks" modelled on their reference sheets; every townsperson uses the same rig.
   // A pose is a set of joint angles (0 = hanging straight down, + = swung toward the way they face), so any pose,
   // cycle or prop is under control. draw() returns where the hands ended up, for props held by the caller.
   const RIG = (() => {
@@ -2743,7 +2743,7 @@ canvas { display: block; width: 100%; height: 100%; touch-action: none; }
       const s = L.hairStyle, H = L.hair;
       c.lineWidth = OW; c.strokeStyle = OL; c.fillStyle = H;
       const crown = (bottomL = 4, bottomR = -3) => { c.beginPath(); c.moveTo(hx - HR - 0.8, hy + bottomL); c.bezierCurveTo(hx - HR - 2, hy - HRY - 6, hx + HR + 2, hy - HRY - 6, hx + HR + 0.8, hy + bottomR); };
-      if (s === 'mop') {   // R.J.: textured top with curtain bangs from a center part, shorter sides, a mid taper fade around the ear
+      if (s === 'mop') {   // Wesley: textured top with curtain bangs from a center part, shorter sides, a mid taper fade around the ear
         // the taper: hair-coloured shading that fades out from the hairline down past the ear and at the nape
         c.save(); c.beginPath(); c.ellipse(hx, hy, HR, HRY, 0, 0, 7); c.clip();
         const fg = c.createLinearGradient(0, hy - 2, 0, hy + 11); fg.addColorStop(0, 'rgba(43,35,40,.62)'); fg.addColorStop(0.55, 'rgba(43,35,40,.28)'); fg.addColorStop(1, 'rgba(43,35,40,0)');
@@ -2892,7 +2892,7 @@ canvas { display: block; width: 100%; height: 100%; touch-action: none; }
     return { draw, head };
   })();
 
-  // R.J., Han and Tito Randy on the court are their sprite sheets
+  // Wesley, Han and Tito Randy on the court are their sprite sheets
   const COURT_W = { player: 'rj', kid: 'han', tito: 'randy' };
   function courtSprite(c, L, w) {
     if (!CHARS.ok(w)) return false;
@@ -3165,7 +3165,7 @@ canvas { display: block; width: 100%; height: 100%; touch-action: none; }
   }
 
   // ---------- sizing, camera + loop ----------
-  // Full-screen on phones/tablets; framed on desktop. Portrait zooms in on the court and follows RJ.
+  // Full-screen on phones/tablets; framed on desktop. Portrait zooms in on the court and follows Wesley.
   const LY = { s: 1, viewW: W, viewH: H, offY: 0, camX: 0, portrait: false, dpr: 1, safeTop: 0, safeBot: 0, ready: false };
   const probe = document.createElement('div');
   probe.style.cssText = 'position:fixed;left:0;top:0;width:0;visibility:hidden;pointer-events:none;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)';
@@ -3248,7 +3248,7 @@ canvas { display: block; width: 100%; height: 100%; touch-action: none; }
     const top = (LY.portrait ? -LY.offY / LY.s : view().y) + LY.safeTop / LY.s;
     const cx = LY.camX + LY.viewW / 2;
     let text = streak >= 2 ? `MADE ${makes}   SHOTS ${shots}   STREAK ${streak}` : `MADE ${makes}   SHOTS ${shots}`;
-    if (horse) text = `RJ ${'HORSE'.slice(0, horse.letters.you) || '-'}    TITO ${'HORSE'.slice(0, horse.letters.tito) || '-'}`;
+    if (horse) text = `WESLEY ${'HORSE'.slice(0, horse.letters.you) || '-'}    TITO ${'HORSE'.slice(0, horse.letters.tito) || '-'}`;
     ctx.font = `12px ${DISPLAY}`;
     const w = ctx.measureText(text).width + 26, y = top + 12;
     ctx.fillStyle = 'rgba(201,154,91,.95)'; roundRect(cx - w / 2, y, w, 24, 6); ctx.fill();

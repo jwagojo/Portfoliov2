@@ -11,7 +11,7 @@
     resume(C) {
       if (!(C.education || C.experience || C.skills)) return null;
       const E = C.education || {};
-      let h = C.resumePdf ? `<div class="dl-row"><a class="btn dl" href="${esc(C.resumePdf)}" download="RJ_Portacion_Resume.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Download my resume (PDF)</a></div>` : '';
+      let h = C.resumePdf ? `<div class="dl-row"><a class="btn dl" href="${esc(C.resumePdf)}" download="${esc(String(C.resumePdf).split('/').pop())}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Download my resume (PDF)</a></div>` : '';
       if (E.school) h += `<div class="card"><h3>${esc(E.school)}</h3><div class="meta"><em>${esc(E.degree)}</em><span class="when">${esc(E.when)}</span></div>${E.extra ? `<div class="meta"><span>${esc(E.extra)}</span></div>` : ''}${E.honors ? `<p class="small"><b>Honors &amp; programs:</b> ${esc(E.honors)}</p>` : ''}${E.coursework ? `<p class="small"><b>Coursework:</b> ${esc(E.coursework)}</p>` : ''}</div>`;
       if ((C.experience || []).length) h += '<div><h2>INDUSTRY &amp; RESEARCH</h2>' + C.experience.map(entry).join('') + '</div>';
       if ((C.work || []).length) h += '<div><h2>PROFESSIONAL EXPERIENCE</h2>' + C.work.map(entry).join('') + '</div>';
@@ -55,6 +55,7 @@
       const lede = panel.querySelector('.lede'); if (lede && K.lede) lede.textContent = K.lede;
       const em = panel.querySelector('#email'); if (em && K.email) em.textContent = K.email;
       const li = panel.querySelector('a[href*="linkedin"]'); if (li && K.linkedin) { li.href = K.linkedin; li.textContent = K.linkedin.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, ''); }
+      const gh = panel.querySelector('a[href*="github"]'); if (gh && K.github) { gh.href = K.github; gh.textContent = K.github.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, ''); }
       const loc = [...panel.querySelectorAll('.panel-in > p')].find((p) => !p.classList.contains('lede')); if (loc && K.location) loc.textContent = K.location;
     }
   }

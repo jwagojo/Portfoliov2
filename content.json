@@ -2,222 +2,101 @@
   "_readme": "Everything on the site that you'd want to update lives here. Edit, commit, and the site redeploys. Keep the quotes and commas: paste this file into jsonlint.com if the site stops showing your changes.",
 
   "name": "Wesley Agojo",
-  "tagline": "Wears many hats. Most of them are cleanroom hoods.",
-  "subline": "Computer Engineering @ UMass Lowell · Semiconductor process & packaging",
+  "tagline": "Software engineer building AI-powered developer tools.",
+  "subline": "Computer Science + Mathematics @ UMass Lowell · Software Engineer",
 
-  "resumePdf": "RJ_Portacion_Resume.pdf",
+  "resumePdf": "Wesley_Agojo_Resume.pdf",
 
   "education": {
     "school": "University of Massachusetts Lowell",
-    "degree": "B.S. Computer Engineering · Minors in Mathematics and Business Administration",
-    "when": "Sep 2024 – May 2028",
-    "extra": "GPA 3.4 · Honors College · Dean's List",
-    "honors": "Honors College; Shah Academy for Leadership & Innovation Scholar; Founder & President, IGNITE; Dean's List; Alpha Lambda Delta Honor Society; River Hawk Experience Distinction (RHED).",
-    "coursework": "Circuit Theory, Electronics Lab, Logic Design, Application Programming, Intro to Electrical & Computer Engineering, Calculus III, Physics I & II, Chemistry I."
+    "degree": "B.S. Computer Science (General) · Minor in Mathematics",
+    "when": "Expected Dec 2027",
+    "extra": "GPA 3.8",
+    "coursework": "Data Structures and Algorithms, Probability and Statistics, Discrete Mathematics 2, Calculus 3, Object-Oriented Programming (C/C++), Cloud Computing, Graphical User Interface, Computer Architecture."
   },
-
-  "experience": [
-    {
-      "title": "Incoming Nanofabrication Engineer",
-      "org": "Core Research Facilities, UMass Lowell (Internship)",
-      "where": "Lowell, MA",
-      "when": "Jan 2027 – May 2027",
-      "bullets": [
-        "Incoming nanofabrication internship in UMass Lowell's shared cleanroom and characterization facilities."
-      ]
-    },
-    {
-      "title": "Process Engineer",
-      "org": "Applied Materials (Co-op)",
-      "where": "Billerica, MA",
-      "when": "Jul 2026 – Dec 2026",
-      "bullets": [
-        "Optimized bottom-up Cu electroplating of 20 × 200 µm high-aspect-ratio features through DOE-driven variation of bath chemistry, temperature, dwell time, vacuum prewet and current-density waveforms, cutting customer wafer fill time by 50%, from a 10-hour benchmark to 5 hours.",
-        "Developed wafer-level electrochemical deposition (ECD) and metallization processes for Cu, In and Pd across TSV, TGV, damascene and advanced-packaging structures to improve throughput and process efficiency.",
-        "Performed process and hardware qualification using optical profilometry, AOI, X-ray imaging, cross-sectional analysis and defect analysis to characterize panel-level plating performance across process conditions and hardware configurations.",
-        "Analyzed Cu thickness, roughness, uniformity, terminal effects, feature fill and overburden in JMP and Excel, turning metrology data into recommendations that supported process optimization and qualification decisions.",
-        "Operated, maintained and troubleshot automated ECD and wet-process equipment (process cells, chemical reservoirs, vacuum, fluid-delivery and wafer-handling systems, electrical interfaces, CDA/N₂ utilities), diagnosing faults through root-cause analysis to sustain repeatable plating and equipment uptime."
-      ]
-    },
-    {
-      "title": "Research Associate, Ultra-Wide Bandgap Semiconductors",
-      "org": "Bhuiyan Research Group · PI: Dr. Anhar Bhuiyan",
-      "where": "Lowell, MA",
-      "when": "Sep 2025 – Jul 2026",
-      "bullets": [
-        "Supported LPCVD growth of gallium oxide (Ga₂O₃) thin films through substrate preparation, wafer cleaving, precursor handling, reactor setup, gas-flow calibration and process monitoring.",
-        "Maintained detailed experimental documentation across growth runs to support reproducible deposition, controlled thin-film growth and run-to-run repeatability.",
-        "Characterized Ga₂O₃ films with XRD, SEM, AFM and Hall effect measurements to evaluate crystal structure, surface morphology, film quality and electrical properties.",
-        "Correlated characterization results with LPCVD growth parameters through literature review and data analysis, contributing to growth-parameter optimization for a Ga₂O₃ epitaxial growth project.",
-        "Presented findings at a university research symposium and in the 3-Minute Thesis (3MT) competition."
-      ]
-    },
-    {
-      "title": "Research Associate, Photonics",
-      "org": "Wang Laboratory of Optics · PI: Dr. Xingwei Wang",
-      "where": "Lowell, MA",
-      "when": "Feb 2025 – Aug 2025",
-      "bullets": [
-        "Fabricated fiber-optic biosensors, strain sensors and shape sensors in the cleanroom through fiber splicing, stripping, shaping and chemical etching (glass etchant, BOE, HCl-based solutions).",
-        "Developed a fiber-optic glucose biosensor as a key project: reviewed state-of-the-art glucose-sensing methods, then designed an approach tailored to the lab's objectives and constraints.",
-        "Engineered an alternative fiber-shaping technique to replace the lab's tapered-edge process, and validated it through extensive testing and data analysis.",
-        "Characterized spectral response, wavelength shifts and signal stability using optical frequency domain reflectometry (OFDR) on an ODiSI system.",
-        "Coordinated with domestic and international vendors to source optical components, managed lab inventory and orders, and kept the lab's Tridion-based website up to date."
-      ]
-    }
-  ],
 
   "work": [
     {
-      "title": "AI/ML Model Validation Fellow",
-      "org": "Handshake AI Fellowship",
-      "where": "Remote",
-      "when": "Oct 2025 – Present",
+      "title": "Software Engineer Intern",
+      "org": "Savvas",
+      "where": "Boston, MA",
+      "when": "Jun 2026 – Aug 2026",
       "bullets": [
-        "Validated, annotated and quality-audited multimodal datasets used in supervised learning and model fine-tuning.",
-        "Evaluated model outputs to identify failure modes, edge cases and distribution shifts, informing improvements in accuracy and bias reduction."
+        "Engineered a company-wide documentation tool adopted across 50+ repositories that monitors pull requests, summarizes code changes via AWS Bedrock (Claude Haiku), and posts ranked Confluence update suggestions directly on PRs.",
+        "Developed a Python pipeline using the GitHub REST API to fetch PR diffs, applying a category-aware compression strategy (50,000-token budget) to safely process massive PRs prior to Bedrock summarization.",
+        "Implemented hybrid vector/lexical retrieval across a Bedrock Knowledge Base with Cohere native reranking, scoring Confluence pages via custom heuristics to surface the most relevant docs per PR.",
+        "Built a scheduled GitHub Actions pipeline to export Confluence pages to Markdown, push updates to S3, and trigger Bedrock KB ingestion, packaged as a Composite Action for seamless adoption."
       ]
     },
     {
-      "title": "Information Systems Specialist",
-      "org": "UMass Lowell Office of the Registrar (formerly Database Management & Special Projects Intern)",
+      "title": "Software Developer Intern",
+      "org": "IBM",
       "where": "Lowell, MA",
-      "when": "May 2025 – Present",
+      "when": "Jan 2026 – May 2026",
       "bullets": [
-        "Validated high volumes of student records during the migration from Perceptive Content to Softdocs, ensuring data accuracy and FERPA compliance, and tracked registrar cases in Salesforce.",
-        "Evaluated incoming transfer credits by interpreting transcripts, applying articulation rules and updating degree audits to each department's requirements.",
-        "Led a digital branding and social media initiative, creating the content strategy and all visual assets, and grew the office's social presence by 40% with over 60,000 impressions."
+        "Built the FVT Diagnostic Tool, an AI-powered triage system using a 3-layer LangGraph state machine to classify IBM MAS FVT failures as test script, environment, or product issues via IBM Bob with RAG-augmented retrieval, auto-filing and deduplicating defects through the Jira REST API to reduce manual triage from hours to minutes.",
+        "Engineered the tool's multi-phase eligibility gate using stagnation detection, version change analysis, and Ansible readiness checks to filter pipeline noise, propagating valid builds through an Apache Kafka event-driven architecture with partition-keyed ordering and manual offset commits.",
+        "Queried FVT execution data from a pre-existing MongoDB instance and architected a new database collection for failure logging, then built a Flask backend with 50+ REST API endpoints and dynamic template rendering for pipeline monitoring, flaky test analysis, and defect tracking."
       ]
     },
     {
-      "title": "Barista & Trainer",
-      "org": "Gong Cha",
-      "where": "Lowell, MA",
-      "when": "Since Jul 2021",
+      "title": "Software Engineer Intern",
+      "org": "Vierra Digital",
+      "where": "Cambridge, MA",
+      "when": "Jun 2025 – Sep 2025",
       "bullets": [
-        "Trained and onboarded new hires as the longest-tenured team member; ran front- and back-of-house operations and Zenput compliance audits."
-      ]
-    },
-    {
-      "title": "Sales Floor Associate",
-      "org": "Staples",
-      "where": "Chelmsford, MA",
-      "when": "Jul 2022 – Jan 2023 · since Dec 2024",
-      "bullets": [
-        "Helped shoppers with tailored recommendations, handled transactions, and led closing: cash reconciliation, cleanup and security procedures."
+        "Worked on customer-facing pages with Next.js (React, Tailwind, TypeScript).",
+        "Engineered an AI-driven ad automation agent that analyzes client websites, extracts marketing assets using LLM analysis, and generates platform-specific copy and creatives to publish campaigns.",
+        "Created and optimized a PostgreSQL data layer to store website analysis, creative assets, campaign configurations, and performance metrics, which offers real-time insights into each client's AI agent."
       ]
     }
   ],
 
   "skills": [
-    { "group": "Semiconductor processing", "items": "Electrochemical deposition (ECD) of Cu, In and Pd; TSV, TGV, damascene and advanced-packaging metallization; LPCVD thin films; wet processing; wafer cleaving; cleanroom; DOE" },
-    { "group": "Metrology & analysis", "items": "SEM, XRD, AFM, Hall effect, optical profilometry, AOI, X-ray imaging, cross-sectional analysis, defect and root-cause analysis" },
-    { "group": "Photonics & fiber optics", "items": "Fusion splicing, fiber stripping and shaping, chemical etching (BOE, HCl-based), OFDR on ODiSI, fiber-optic biosensors and strain/shape sensors" },
-    { "group": "Equipment & hardware", "items": "Automated ECD and wet-process tools, vacuum and fluid delivery, wafer handling, PCB design, soldering, oscilloscopes, Analog Discovery, FPGA, I²C, GPIO, level shifting" },
-    { "group": "Programming & EDA", "items": "C, C++, ARM Assembly, MATLAB, Arduino IDE, Quartus Prime, LTspice, Multisim, Altium Designer" },
-    { "group": "Data & business systems", "items": "JMP, Excel, Salesforce, Softdocs, Perceptive Content, Tridion CMS, Zenput" },
-    { "group": "Communication", "items": "Technical writing, research presentations, vendor coordination, mentoring and training" }
+    { "group": "Languages", "items": "C++, C, Python, TypeScript, HTML/CSS, JavaScript, Java, SQL, GraphQL" },
+    { "group": "Web technologies", "items": "React.js, Next.js, Flask, Tailwind CSS, JWT" },
+    { "group": "AI & ML", "items": "Retrieval-Augmented Generation (RAG), Amazon Bedrock, Large Language Models (LLMs), Generative AI, OpenCV, YOLOv8" },
+    { "group": "Technologies & architecture", "items": "GitHub Actions (CI/CD), AWS CDK, Serverless Architecture, REST API, Git" },
+    { "group": "Developer tools", "items": "GitHub, Linux, Azure, AWS, OpenSearch, Confluence, JIRA, PostgreSQL, MongoDB, Scrum, Agile, FVT" }
   ],
-
-  "certifications": [
-    { "name": "Laboratory & Cleanroom Safety Training", "issuer": "UMass Lowell (annual renewal)", "valid": "Feb 2025 – Dec 2026" },
-    { "name": "Responsible Conduct of Research", "issuer": "CITI Program", "valid": "Feb 2025 – Feb 2028" },
-    { "name": "Good Laboratory Practice (GLP)", "issuer": "CITI Program", "valid": "Feb 2025 – Feb 2028" },
-    { "name": "Basic Biosafety Training", "issuer": "CITI Program", "valid": "Feb 2025 – Feb 2028" },
-    { "name": "Mental Health First Aid", "issuer": "MHFA International", "valid": "Sep 2025 – Sep 2028" }
-  ],
-
-  "awards": {
-    "distinctions": "Shah Academy Scholar, Dean's List, Honors College, Alpha Lambda Delta Honor Society, River Hawk Experience Distinction (RHED), Francis College Ambassador, AP Scholar with Honor.",
-    "scholarships": "Dean's Scholarship; John & Abigail Adams Scholarship; Immersive Scholars Research Award; Moloney Scholar Experiential Learning Grant; OMA STEP Research Initiative Grant; Teradyne SAIL Award; UKG Engagement in Leadership Grant; RHSA Engaged for Excellence Scholarship; Handshake AI/ML Fellowship."
-  },
 
   "projects": [
     {
-      "title": "ARM Assembly Blackjack System",
-      "tags": ["ARM Assembly", "I²C", "GPIO", "Embedded systems"],
-      "text": "An ARM-based embedded blackjack game with real-time game logic, memory management and modular subroutines written in ARM Assembly. It drives a 20×4 I²C LCD and GPIO controls, with 3.3 V / 5 V level-shifting circuitry, debugged across both hardware and software. (The blackjack table on the street runs the same rules.)"
-    },
-    {
-      "title": "Colpitts Oscillator",
-      "tags": ["LTspice", "Analog circuit design", "FFT analysis"],
-      "text": "An LM741-based Colpitts oscillator using LC resonance and diode feedback stabilization. Component values were iterated in LTspice to reach a 7 kHz sinusoidal output, then frequency response, waveform stability and harmonic performance were validated with FFT analysis."
-    },
-    {
-      "title": "Telephone Dialing Simulation",
-      "tags": ["MATLAB", "Signal processing"],
-      "text": "A software touch-tone telephone that maps each dialed digit to its DTMF frequency pair, then synthesizes and concatenates the waveforms to play phone numbers, ringing tones and busy signals."
-    },
-    {
-      "title": "Traffic Light Controller",
-      "tags": ["Arduino", "Digital I/O", "Breadboarding"],
-      "text": "An Arduino traffic light for a dual-direction intersection, built on a breadboard with LEDs, digital I/O and push-button inputs, with timing logic that coordinates green, yellow and red cycles like a real crossing."
+      "title": "AudioByte",
+      "tags": ["AWS (S3, DynamoDB, Lambda, Cognito)", "React.js", "JavaScript", "GraphQL", "Tailwind CSS", "Python CDK"],
+      "text": "A full-stack, cloud-native music streaming platform with secure authentication, real-time audio playback, and personalized library management, built with React.js on AWS serverless infrastructure. The backend is provisioned with AWS CDK: S3 for audio storage, DynamoDB for metadata, Lambda for serverless compute, and a GraphQL API for efficient data queries."
     }
   ],
 
   "leadership": [
     {
-      "title": "Founder & President",
-      "org": "IGNITE at UMass Lowell",
-      "when": "Nov 2025 – Present",
-      "bullets": [
-        "Founded the student organization and developed its mission, governance structure and event framework.",
-        "Led early recruitment and built the club's first mentorship and career-development programming."
-      ]
-    },
-    {
-      "title": "First-Generation Peer Leader",
-      "org": "River Hawk Scholars Academy",
-      "when": "Jul 2025 – Present",
-      "bullets": [
-        "Mentor a cohort of 15 first-generation Electrical and Computer Engineering freshmen with academic guidance, transition support and structured development programming.",
-        "Selected as a UKG Engagement in Leadership Grant recipient for the role; previously a Champion Member of the Academy."
-      ]
-    },
-    {
-      "title": "Student Ambassador",
-      "org": "Francis College of Engineering",
+      "title": "President",
+      "org": "UML The Filipino Club",
       "when": "Sep 2025 – Present",
       "bullets": [
-        "Represent the college at major outreach events for prospective students, families and other stakeholders."
-      ]
-    },
-    {
-      "title": "Student Member",
-      "org": "Shah Academy for Leadership & Innovation",
-      "when": "Jan 2025 – Present",
-      "bullets": [
-        "Engineer-focused leadership workshops, industry mentorship and networking with senior engineering leaders and executives."
-      ]
-    },
-    {
-      "title": "Webmaster",
-      "org": "The Filipino Club (TFC)",
-      "when": "Sep 2024 – Present",
-      "bullets": [
-        "Led a full rebrand of the club's digital presence: event photography, media editing and original graphics, turning the club's cultural identity into cohesive visual storytelling."
+        "Directed and mentored an executive board of 10 officers, delegating responsibilities and overseeing project timelines for all cultural and outreach initiatives.",
+        "Grew member engagement through fostering an inclusive club culture and implementing effective communication channels for project management and event planning."
       ]
     }
   ],
   "leadershipOther": [
-    "Teradyne Spring Active Immersion in Leadership (SAIL) participant, River Hawk Scholars Academy",
-    "Member: Honors College, IEEE, Rist DifferenceMaker Institute, STEP Research Cohort, Alpha Lambda Delta",
-    "Event Coordinator, CHS ASO (Chelmsford High School)"
+    "Amazon IET-MSI program participant"
   ],
 
   "about": {
-    "lede": "I'm R.J., a Computer Engineering student at UMass Lowell who wears a lot of hats. Most of them end up being cleanroom hoods.",
-    "hats": ["Computer engineer", "Process engineer", "Researcher", "Founder & President, IGNITE", "Shah Academy Scholar", "First-gen peer leader"],
+    "lede": "I'm Wesley, a Computer Science student at UMass Lowell who likes building AI tools that make other engineers' lives easier.",
+    "hats": ["Software engineer", "AI & cloud builder", "Math minor", "President, UML Filipino Club", "Amazon IET-MSI participant"],
     "paragraphs": [
-      "My specialty is semiconductors. At Applied Materials I developed copper electroplating for high-aspect-ratio features and cut a customer's wafer fill time in half. Before that I grew Ga₂O₃ thin films by LPCVD in the Bhuiyan Research Group and built fiber-optic sensors in the Wang Laboratory of Optics. Next I'm joining UMass Lowell's Core Research Facilities as a nanofabrication engineering intern.",
-      "Outside the lab I founded and lead IGNITE, mentor first-generation engineering students, and I'm a Shah Academy Scholar; the SK Youth Center down the street has the full list. This site is the rest of me: a barangay street, a basketball court, and a brown Mazda6 with a CHOIKI plate."
+      "This past summer at Savvas I built a documentation tool, now used across 50+ repositories, that reads pull requests, summarizes them with AWS Bedrock, and suggests which Confluence pages need updating. Before that I built an AI triage system at IBM that cut failure triage from hours to minutes, and an ad automation agent at Vierra Digital.",
+      "Outside of work I'm the president of the UML Filipino Club, where I lead a 10-person executive board; the SK Youth Center down the street has the details. This site is the rest of me: a barangay street, a basketball court, and a jeepney ride home."
     ]
   },
 
   "contact": {
-    "lede": "Open to semiconductor process, packaging and nanofabrication roles.",
-    "email": "rojannportacion@gmail.com",
-    "linkedin": "https://www.linkedin.com/in/rjportacion",
+    "lede": "Open to software engineering internships and new-grad roles.",
+    "email": "Agojo62@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/john-wesley-agojo",
+    "github": "https://github.com/jwagojo",
     "location": "Based in Massachusetts."
   }
 }

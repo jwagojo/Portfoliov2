@@ -1,4 +1,4 @@
-# R.J. Portacion: portfolio
+# Wesley Agojo: portfolio
 
 A side-scrolling portfolio. You ride a jeepney from UMass Lowell into a Taguig barangay, browse the storefronts for my resume and projects, play pepper with Han, and shoot around on the court.
 
@@ -16,9 +16,9 @@ A side-scrolling portfolio. You ride a jeepney from UMass Lowell into a Taguig b
 | Leadership (the SK Youth Center door) | `leadership`, plus one-liners in `leadershipOther` |
 | Projects | `projects`. Add `"link": "https://…"` to show a "See it" button |
 | About text and the "hats" chips | `about` |
-| Email, LinkedIn, location line | `contact` |
+| Email, LinkedIn, GitHub, location line | `contact` |
 
-To add a job, copy an existing `{ … }` block in `experience`, paste it where you want it, and put a comma between blocks. `"bullets": []` is fine for a role with no bullets yet.
+To add a job, copy an existing `{ … }` block in `work`, paste it where you want it, and put a comma between blocks. `"bullets": []` is fine for a role with no bullets yet.
 
 **If your change doesn't show up,** the file probably has a typo (a missing comma or quote). Paste it into [jsonlint.com](https://jsonlint.com) to find the line. While the file is broken, the site falls back to the text that's built into the pages, so it never goes blank.
 
@@ -32,7 +32,7 @@ To add a job, copy an existing `{ … }` block in `experience`, paste it where y
 | `court.html` | The basketball court |
 | `content.json` | Your resume, projects, about and contact text |
 | `content.js` | Reads `content.json` and fills in the panels |
-| `RJ_Portacion_Resume.pdf` | The resume behind the Download button. Replace this file (same name) to update it |
+| `Wesley_Agojo_Resume.pdf` | The resume behind the Download button. Replace this file (same name) to update it |
 
 Deep links work: `/#hub` opens the street, and `/#court` opens the court.
 
