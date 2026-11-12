@@ -246,6 +246,10 @@ canvas#scene { position: fixed; inset: 0; width: 100%; height: 100%; display: bl
 .table-note { color: var(--muted); font-size: 13px; text-align: center; margin: 0; }
 
 @media (prefers-reduced-motion: reduce) { #act.ready { animation: none; } .pc { animation: none; } }
+
+/* overlay mode (?game=...): this page is one game shown on top of the 3D street, so the 2D street's own controls stay out of the way */
+.game-mode #sections, .game-mode #skip, .game-mode #mute, .game-mode .hint, .game-mode #act, .game-mode #act-label { display: none !important; }
+.g-solo canvas#scene, .g-solo .pad, .g-solo #spike, .g-solo #spike-label, .g-solo .pep-hud { display: none !important; }
 </style>
 
 <canvas id="scene" aria-label="A dense street in Calamba City. Wesley can walk to a print shop, an electronics repair stall, the alley gate to the basketball court, the barangay hall, a sari-sari store, the SK youth center, and a volleyball corner at the end of the street where Han and the kids hang out."></canvas>
@@ -4847,6 +4851,20 @@ canvas#scene { position: fixed; inset: 0; width: 100%; height: 100%; display: bl
     const sel = () => { const r = document.createRange(); r.selectNodeContents(document.getElementById('email')); const s = window.getSelection(); s.removeAllRanges(); s.addRange(r); copyBtn.textContent = 'Press Ctrl+C'; };
     try { navigator.clipboard.writeText(txt).then(done, sel); } catch (e) { sel(); }
   });
+
+  // ---------- overlay mode: the 3D street (hub3d.html) opens one game at a time in an iframe, with ?game=food|cards|pool|pepper ----------
+  const GAME_MODE = new URLSearchParams(location.search).get('game');
+  if (['food', 'cards', 'pool', 'pepper'].includes(GAME_MODE)) {
+    document.documentElement.classList.add('game-mode');
+    if (GAME_MODE !== 'pepper') document.documentElement.classList.add('g-solo');
+    const tell = () => { try { parent.postMessage({ gameClosed: GAME_MODE }, '*'); } catch (e) {} };
+    const afterClose = () => setTimeout(() => { if (!gameOpen() && !PEP.on) tell(); }, 80);   // wait a beat: some buttons close one game and open the next
+    document.querySelectorAll('[data-close-game]').forEach(b => b.addEventListener('click', afterClose));
+    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') afterClose(); });
+    document.getElementById('pep-leave').addEventListener('click', () => setTimeout(tell, 80));
+    skipIntro();
+    if (GAME_MODE === 'food') openFood(); else if (GAME_MODE === 'cards') openCards(); else if (GAME_MODE === 'pool') POOL.open(); else warpPepper();
+  }
 })();
 </script>
 <script src="content.js"></script>

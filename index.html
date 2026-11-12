@@ -40,7 +40,9 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
 <script>
   // Each scene is its own page. They ask the shell to move on with postMessage({ go: 'hub' | 'court' | 'title', from });
   // the shell plays a transition, swaps which frame is visible, and tells the scenes to pause or resume.
-  const SRC = { title: 'title.html', hub: 'hub.html', court: 'court.html' };
+  // 3D street and court by default. Add ?2d to the address (index.html?2d) for the original flat versions.
+  const TWO_D = /[?&]2d\b/.test(location.search);
+  const SRC = { title: 'title.html', hub: TWO_D ? 'hub.html' : 'hub3d.html', court: TWO_D ? 'court.html' : 'court3d.html' };
   const LINES = {
     hub: ['NEXT STOP:<br>CALAMBA CITY', 'Welcome to the barangay'],
     court: ['DOWN THE ESKINITA', 'To the court'],

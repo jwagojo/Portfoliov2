@@ -28,13 +28,16 @@ To add a job, copy an existing `{ … }` block in `work`, paste it where you wan
 |---|---|
 | `index.html` | The shell. It holds the three scenes and plays the transitions between them (jeepney ride, "Heads up!") |
 | `title.html` | Title screen: UMass Lowell, the grenade, the jeepney ride |
-| `hub.html` | The barangay street: storefronts, the family, the volleyball corner |
-| `court.html` | The basketball court |
+| `hub3d.html` | The 3D barangay street (Three.js, loaded from a CDN). This is the street visitors see by default. It reads the same `content.json` |
+| `court3d.html` | The 3D basketball court: shot meter, real ball physics, HORSE with Tito Randy. Physics lives in `court-physics.js` |
+| `court-physics.js` | The ball, rim and backboard physics for the 3D court |
+| `hub.html` | The original flat 2D street. In 3D mode it also supplies the mini-games (fishball, blackjack, pool, pepper), which open as overlays via `hub.html?game=food|cards|pool|pepper` |
+| `court.html` | The original flat 2D court |
 | `content.json` | Your resume, projects, about and contact text |
 | `content.js` | Reads `content.json` and fills in the panels |
 | `Wesley_Agojo_Resume.pdf` | The resume behind the Download button. Replace this file (same name) to update it |
 
-Deep links work: `/#hub` opens the street, and `/#court` opens the court.
+Deep links work: `/#hub` opens the street, and `/#court` opens the court. The site is 3D by default; add `?2d` (`/?2d`) to play the original flat version. The 3D scenes need WebGL and an internet connection for the Three.js library.
 
 ## Hosting
 
